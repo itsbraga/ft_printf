@@ -6,18 +6,24 @@
 #    By: panther <panther@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 13:44:42 by panther           #+#    #+#              #
-#    Updated: 2023/05/15 16:47:02 by panther          ###   ########.fr        #
+#    Updated: 2023/05/15 23:16:48 by panther          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	utils.c \
-		utils2.c 
+SRCS =	ft_printchar.c \
+		ft_printstr.c \
+		ft_printptr.c \
+		ft_printnbr.c \
+		ft_printUint.c \
+		ft_printHex.c \
+		ft_printpercent.c \
+		ft_printf.c
 
 OBJECTS = $(SRCS:.c=.o)
 
 NAME = libftprintf.a
 
-INCS = inc/ft_printf.h
+INCS = incs/
 
 CFLAGS = -Wall -Wextra -Werror
 

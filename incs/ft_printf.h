@@ -6,7 +6,7 @@
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:34:12 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 18:08:50 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/15 22:57:15 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,13 @@
                           paramètre de la liste.
                                                                              */
 int     ft_printf(const char *format, ...);
-void    ft_putchar(char c);
-int     ft_printchar(char c);
+
+int     ft_printchar(int c);
 int     ft_printstr(char *s);
-void    ft_putnbr(int n);
-void	ft_putnbr_uint(unsigned int n);
-int     ft_printHex(unsigned int n, const char format);
-int     printPercent(char p);
+int     ft_printptr(uintptr_t ptr);
+int     ft_printnbr(int n);
+int		ft_printUint(unsigned int n);
+int     ft_printHex(unsigned int n, const char *format);
+int     ft_printpercent(void);
 
 #endif

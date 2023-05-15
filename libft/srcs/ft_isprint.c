@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_Uint.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 17:44:08 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 18:15:04 by panther          ###   ########.fr       */
+/*   Created: 2023/05/02 12:13:41 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/15 22:56:46 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../../incs/libft.h"
 
-void	ft_putnbr_uint(unsigned int n)
+int	ft_isprint(int c)
 {
-	if (n > 9)
-	{
-		ft_putnbr_uint(n / 10);
-		n %= 10;
-	}
-	ft_putchar(n % 10 + 48);
+	if (c < 32 || c > 126)
+		return (0);
+	else
+		return (1);
 }
-
-int		ft_print_uint(int n);

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printStr.c                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 17:20:51 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 17:39:39 by panther          ###   ########.fr       */
+/*   Created: 2023/05/02 11:55:04 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/15 22:57:06 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../../incs/libft.h"
 
-int     ft_printstr(char *s)
+int	ft_isdigit(int c)
 {
-    if (s == NULL)
-    {
-        ft_printstr("(null)");
-        return (6); //Errno
-    }
-    while (*s)
-    {
-        ft_printchar(*s);
-        s++;
-    }
-    return (1);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }

@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_printpercent.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 17:47:49 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 17:48:15 by panther          ###   ########.fr       */
+/*   Created: 2023/05/15 16:10:24 by panther           #+#    #+#             */
+/*   Updated: 2023/05/15 23:18:12 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_putchar(char c)
+#include "incs/ft_printf.h"
+#include "incs/libft.h"
+
+int     ft_printpercent(void)
 {
-    write(1, &c, 1);
+    ft_putchar_fd('%', 1);
+    return (1);
 }

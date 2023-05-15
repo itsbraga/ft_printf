@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 16:10:24 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 17:32:40 by panther          ###   ########.fr       */
+/*   Created: 2023/05/15 15:45:29 by panther           #+#    #+#             */
+/*   Updated: 2023/05/15 23:07:21 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "incs/ft_printf.h"
+#include "incs/libft.h"
 
-int     printPercent(int p)
+int     ft_printnbr(int n)
 {
-    ft_putchar('%');
-    return (1);
+    char    *nbr;
+    int     input;
+
+    input = 0;
+    nbr = ft_itoa(n);
+    input = ft_printstr(nbr);
+    free(nbr);
+    return (input);
 }
