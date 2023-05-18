@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:50:47 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 23:15:39 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/16 18:14:25 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
-#include "incs/libft.h"
+#include "ft_printf.h"
 
-void    ft_putptr(uintptr_t n)
+void	ft_putptr(uintptr_t n)
 {
-    if (n >= 16)
+	if (n >= 16)
 	{
 		ft_putptr(n / 16);
 		ft_putptr(n % 16);
@@ -29,17 +28,17 @@ void    ft_putptr(uintptr_t n)
 	}
 }
 
-int     getPtrlen(uintptr_t n)
+int	get_ptrlen(uintptr_t n)
 {
-    int nlen;
+	int	nlen;
 
-    nlen = 0;
-    while (n != 0)
-    {
-        nlen++;
-        n /= 16;
-    }
-    return (nlen);
+	nlen = 0;
+	while (n != 0)
+	{
+		nlen++;
+		n /= 16;
+	}
+	return (nlen);
 }
 
 /* ************************************************************************** */
@@ -49,19 +48,20 @@ int     getPtrlen(uintptr_t n)
 /*      used instead of long or unsigned long for this purpose.               */
 /*                                                                            */
 /* ************************************************************************** */
-//  
-int ft_printptr(uintptr_t ptr) // putAddress
+//  Here, you put the address pointed by ptr
+//
+int	ft_printptr(uintptr_t ptr)
 {
-    int     input;
+	int	input;
 
-    input = 0;
-    if (!(void *)ptr)
-        input += write(1, "(nil)", 5);
+	input = 0;
+	if (!(void *)ptr)
+		input += write(1, "(nil)", 5);
 	else
-    {
-        ft_putptr(ptr);
+	{
 		input += write(1, "0x", 2);
-        input += getPtrlen(ptr);
+		ft_putptr(ptr);
+		input += get_ptrlen(ptr);
 	}
 	return (input);
 }

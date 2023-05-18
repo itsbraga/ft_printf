@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:34:12 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 22:57:15 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/16 19:21:04 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,19 @@
             - va_start :  Initialise d'une structure va_list à partir d'un
                           paramètre de la liste.
                                                                              */
-int     ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
-int     ft_printchar(int c);
-int     ft_printstr(char *s);
-int     ft_printptr(uintptr_t ptr);
-int     ft_printnbr(int n);
-int		ft_printUint(unsigned int n);
-int     ft_printHex(unsigned int n, const char *format);
-int     ft_printpercent(void);
+int		ft_printchar(int c);
+int		ft_printstr(char *s);
+int		ft_printptr(uintptr_t ptr);
+int		ft_printnbr(int n);
+int		ft_print_unsigned_int(unsigned int n);
+int		ft_printhex(unsigned int n, const char *format);
+int		ft_printpercent(void);
+
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+char	*ft_itoa(int n);
+size_t	ft_strlen(char *s);
 
 #endif

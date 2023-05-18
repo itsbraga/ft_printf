@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printpercent.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:10:24 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 23:18:12 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/16 16:26:02 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
-#include "incs/libft.h"
+#include "ft_printf.h"
 
-int     ft_printpercent(void)
+int	ft_printpercent(void)
 {
-    ft_putchar_fd('%', 1);
-    return (1);
+	ft_putchar_fd('%', 1);
+	return (1);
 }

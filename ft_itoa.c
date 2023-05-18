@@ -3,26 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:08:39 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/15 22:56:44 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/16 19:18:12 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/libft.h"
+#include "ft_printf.h"
 
-/*	Description:
-	Cette fonction convertit le nombre entier 'n' en une chaîne de caractères
-	contenant ce même nombre.
-
-	Valeur de retour:
-	- La chaîne de caractères contenant 'n'
-	- NULL si l'argument 'n' est invalide et définira errno sur une erreur de
-	  type EINVAL
-*/
-
-static int	len_digit(long n)
+static int	len_digit(int n)
 {
 	int	len;
 
@@ -42,29 +32,27 @@ static int	len_digit(long n)
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	long	nb;
+	char	*res;
 	int		len_d;
 
 	len_d = len_digit(n);
-	nb = n;
-	s = (char *)malloc(sizeof(*s) * (len_d + 1));
-	if (!s)
+	res = (char *)malloc(sizeof(*res) * (len_d + 1));
+	if (!res)
 		return (NULL);
-	s[len_d] = '\0';
-	if (nb == 0)
-		s[0] = 48;
-	if (nb < 0)
+	res[len_d] = '\0';
+	if (n == 0)
+		res[0] = 48;
+	if (n < 0)
 	{
-		s[0] = '-';
-		nb = -nb;
+		res[0] = '-';
+		n *= -1;
 	}
-	while (nb)
+	while (n)
 	{
-		s[--len_d] = nb % 10 + 48;
-		nb = nb / 10;
+		res[--len_d] = n % 10 + 48;
+		n /= 10;
 	}
-	return (s);
+	return (res);
 }
 
 /*int main(int argc, char **argv)

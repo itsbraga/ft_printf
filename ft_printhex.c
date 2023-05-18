@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printHex.c                                      :+:      :+:    :+:   */
+/*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:41:01 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 23:17:45 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/16 19:10:53 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
-#include "incs/libft.h"
+#include "ft_printf.h"
 
-void    ft_putHex(unsigned int n, const char *format)
+void	ft_puthex(unsigned int n, const char *format)
 {
-    if (n >= 16)
+	if (n >= 16)
 	{
-		ft_putHex(n / 16, format);
-		ft_putHex(n % 16, format);
+		ft_puthex(n / 16, format);
+		ft_puthex(n % 16, format);
 	}
 	else
 	{
@@ -34,27 +33,27 @@ void    ft_putHex(unsigned int n, const char *format)
 	}
 }
 
-int     getHexlen(unsigned int n)
+int	get_hexlen(unsigned int n)
 {
-    int nlen;
+	int	nlen;
 
-    nlen = 0;
-    while (n != 0)
-    {
-        nlen++;
-        n /= 16;
-    }
-    return (nlen);
+	nlen = 0;
+	while (n != 0)
+	{
+		nlen++;
+		n /= 16;
+	}
+	return (nlen);
 }
 
-int     ft_printHex(unsigned int n, const char *format)
+int	ft_printhex(unsigned int n, const char *format)
 {
-    if (n == 0)
-    {
-        ft_putchar_fd('0', 1);
-        return (0);
-    }
-    else
-        ft_putHex(n, format);
-    return (getHexlen(n));
+	if (n == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (0);
+	}
+	else
+		ft_puthex(n, format);
+	return (get_hexlen(n));
 }

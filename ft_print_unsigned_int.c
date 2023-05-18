@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printUint.c                                     :+:      :+:    :+:   */
+/*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:44:08 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 23:16:43 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/16 16:25:24 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "ft_printf.h"
 
 static int	len_digit(long n)
 {
@@ -30,7 +30,7 @@ static int	len_digit(long n)
 	return (len);
 }
 
-char	*ft_Uitoa(int n)
+char	*ft_utoa(int n)
 {
 	char	*nbr;
 	int		len_d;
@@ -48,7 +48,7 @@ char	*ft_Uitoa(int n)
 	return (nbr);
 }
 
-int		ft_printUint(unsigned int n)
+int	ft_print_unsigned_int(unsigned int n)
 {
 	char	*nbr;
 	int		input;
@@ -58,7 +58,7 @@ int		ft_printUint(unsigned int n)
 		input += write(1, "0", 1);
 	else
 	{
-		nbr = ft_Uitoa(n);
+		nbr = ft_utoa(n);
 		input += ft_printstr(nbr);
 		free(nbr);
 	}

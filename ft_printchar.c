@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:20:03 by panther           #+#    #+#             */
-/*   Updated: 2023/05/15 23:07:08 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/16 19:07:27 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "ft_printf.h"
 
-int     ft_printchar(int c)
+int	ft_printchar(int c)
 {
-    write(1, &c, 1);
-    return (1);
+	return (write(1, &c, 1));
 }
