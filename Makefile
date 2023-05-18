@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
+#    By: panther <panther@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 13:44:42 by panther           #+#    #+#              #
-#    Updated: 2023/05/16 19:08:21 by annabrag         ###   ########.fr        #
+#    Updated: 2023/05/18 18:29:12 by panther          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,13 @@ SRCS =	ft_printchar.c \
 		ft_strlen.c \
 		ft_itoa.c \
 		ft_putchar_fd.c \
-		ft_putstr_fd.c \
+		ft_putstr_fd.c
 
 OBJECTS = $(SRCS:.c=.o)
 
 NAME = libftprintf.a
 
-INCS = incs/
+INCS = ft_printf.h
 
 CFLAGS = -Wall -Wextra -Werror
 
