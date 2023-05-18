@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:41:01 by panther           #+#    #+#             */
-/*   Updated: 2023/05/16 19:10:53 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:05:53 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,7 @@ int	get_hexlen(unsigned int n)
 int	ft_printhex(unsigned int n, const char *format)
 {
 	if (n == 0)
-	{
-		ft_putchar_fd('0', 1);
-		return (0);
-	}
+		return (write(1, "0", 1));
 	else
 		ft_puthex(n, format);
 	return (get_hexlen(n));

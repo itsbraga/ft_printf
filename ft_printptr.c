@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:50:47 by panther           #+#    #+#             */
-/*   Updated: 2023/05/16 18:14:25 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:21:29 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,16 @@ int	ft_printptr(uintptr_t ptr)
 	int	input;
 
 	input = 0;
-	if (!(void *)ptr)
+	input += write(1, "0x", 2);	
+	if (ptr == 0)
+		input += write(1, "0", 1);
+	if ((void *)ptr != 0)
+	{
 		input += write(1, "(nil)", 5);
+		return (-1);
+	}
 	else
 	{
-		input += write(1, "0x", 2);
 		ft_putptr(ptr);
 		input += get_ptrlen(ptr);
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:44:08 by panther           #+#    #+#             */
-/*   Updated: 2023/05/16 16:25:24 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:03:11 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	len_digit(long n)
 	return (len);
 }
 
-char	*ft_utoa(int n)
+char	*ft_utoa(unsigned int n)
 {
 	char	*nbr;
 	int		len_d;

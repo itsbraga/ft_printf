@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:08:39 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/16 19:18:12 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/18 18:59:44 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	len_digit(int n)
+static int	len_digit(long n)
 {
 	int	len;
 
@@ -34,23 +34,25 @@ char	*ft_itoa(int n)
 {
 	char	*res;
 	int		len_d;
+	long	nn;
 
-	len_d = len_digit(n);
+	nn = (long)n;
+	len_d = len_digit(nn);
 	res = (char *)malloc(sizeof(*res) * (len_d + 1));
 	if (!res)
 		return (NULL);
 	res[len_d] = '\0';
-	if (n == 0)
+	if (nn == 0)
 		res[0] = 48;
-	if (n < 0)
+	if (nn < 0)
 	{
 		res[0] = '-';
-		n *= -1;
+		nn *= -1;
 	}
-	while (n)
+	while (nn)
 	{
-		res[--len_d] = n % 10 + 48;
-		n /= 10;
+		res[--len_d] = nn % 10 + 48;
+		nn /= 10;
 	}
 	return (res);
 }
