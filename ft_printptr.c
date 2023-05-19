@@ -6,7 +6,7 @@
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:50:47 by panther           #+#    #+#             */
-/*   Updated: 2023/05/18 19:21:29 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/19 14:42:41 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,17 @@ int	get_ptrlen(uintptr_t n)
 /* ************************************************************************** */
 //  Here, you put the address pointed by ptr
 //
-int	ft_printptr(uintptr_t ptr)
+//	************* VERSION LINUX *************
+//	unsigned long long in case of norm: C98
+//
+int	ft_printptr(unsigned long long ptr)
 {
 	int	input;
 
 	input = 0;
 	input += write(1, "0x", 2);	
-	if (ptr == 0)
-		input += write(1, "0", 1);
-	if ((void *)ptr != 0)
-	{
+	if (!(void *)ptr)
 		input += write(1, "(nil)", 5);
-		return (-1);
-	}
 	else
 	{
 		ft_putptr(ptr);
@@ -70,3 +68,22 @@ int	ft_printptr(uintptr_t ptr)
 	}
 	return (input);
 }
+//
+//	************ VERSION OSX ************
+//	uintptr_t in case of norm: C99
+// 
+// int	ft_printptr(uintptr_t ptr)
+// {
+// 	int	input;
+
+// 	input = 0;
+// 	input += write(1, "0x", 2);	
+// 	if (!(void *)ptr)
+// 		input += write(1, "0", 1);
+// 	else
+// 	{
+// 		ft_putptr(ptr);
+// 		input += get_ptrlen(ptr);
+// 	}
+// 	return (input);
+// }
