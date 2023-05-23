@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: panther <panther@student.42.fr>            +#+  +:+       +#+         #
+#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 13:44:42 by panther           #+#    #+#              #
-#    Updated: 2023/05/18 18:29:12 by panther          ###   ########.fr        #
+#    Updated: 2023/05/23 18:30:37 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ SRCS =	ft_printchar.c \
 		ft_printnbr.c \
 		ft_print_unsigned_int.c \
 		ft_printhex.c \
-		ft_printpercent.c \
 		ft_printf.c \
 		ft_strlen.c \
 		ft_itoa.c \

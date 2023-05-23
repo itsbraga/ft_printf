@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:58:27 by panther           #+#    #+#             */
-/*   Updated: 2023/05/19 14:43:01 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/23 18:29:14 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_printparams(va_list args, const char *format)
 	else if (*format == 's')
 		input += ft_printstr(va_arg(args, char *));
 	else if (*format == 'p')
-		input += ft_printptr(va_arg(args, uintptr_t));
+		input += ft_printptr(va_arg(args, void *));
 	else if (*format == 'd' || *format == 'i')
 		input += ft_printnbr(va_arg(args, int));
 	else if (*format == 'u')
@@ -30,7 +30,7 @@ int	ft_printparams(va_list args, const char *format)
 	else if (*format == 'x' || *format == 'X')
 		input += ft_printhex(va_arg(args, unsigned int), format);
 	else if (*format == '%')
-		input += ft_printpercent();
+		input += ft_printchar('%');
 	return (input);
 }
 
@@ -66,13 +66,16 @@ int	ft_printf(const char *format, ...)
 
 // 	test = "Check address";
 // 	puts("What my function does:\n");
-// 	printf("printf ret=%d\n", ft_printf("%c\n%s\n%p\n%d\n%i\n", 'a', "Møme", test, 42, -2147483647));
+// 	printf("printf ret=%d\n", ft_printf("%c\n%s\n%p\n%d\n%i\n",
+// 						 'a', "Møme", test, 42, -2147483647));
 // 	printf("printf ret=%d\n", ft_printf("%u\n%x\n%X\n", 5, 42, 102));
 // 	printf("printf ret=%d\n", ft_printf("%x\n%X\n", 42, 10256465));
 // 	printf("printf ret=%d\n", ft_printf(0));
 // 	printf("printf ret=%d\n", ft_printf(NULL));
+	
 // 	puts("\n\nTrue f:\n");
-// 	printf("printf ret=%d\n", printf("%c\n%s\n%p\n%d\n%i\n", 'a', "Møme", test, 42, -2147483647));
+// 	printf("printf ret=%d\n", printf("%c\n%s\n%p\n%d\n%i\n",
+// 						'a', "Møme", test, 42, -2147483647));
 // 	printf("printf ret=%d\n", printf("%u\n%x\n%X\n", 5, 42, 102));
 // 	printf("printf ret=%d\n", printf("%x\n%X\n", 42, 10256465));
 // 	printf("printf ret=%d\n", printf(0));

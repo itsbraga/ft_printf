@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:50:47 by panther           #+#    #+#             */
-/*   Updated: 2023/05/19 17:47:22 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/23 18:27:31 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putptr(uintptr_t n)
+void	ft_putptr(unsigned long long n)
 {
 	if (n >= 16)
 	{
@@ -28,7 +28,7 @@ void	ft_putptr(uintptr_t n)
 	}
 }
 
-int	get_ptrlen(uintptr_t n)
+int	get_ptrlen(unsigned long long n)
 {
 	int	nlen;
 
@@ -53,20 +53,20 @@ int	get_ptrlen(uintptr_t n)
 //	************* VERSION LINUX *************
 //	unsigned long long in case of norm: C98
 //
-int	ft_printptr(unsigned long long ptr)
+int	ft_printptr(void *ptr)
 {
-	int	input;
+	int	counter;
 
-	input = 0;
-	input += write(1, "0x", 2);	
-	if (!(void *)ptr)
-		input += write(1, "(nil)", 5);
+	counter = 0;
+	if (!ptr)
+		counter += write(1, "(nil)", 5);
 	else
 	{
-		ft_putptr(ptr);
-		input += get_ptrlen(ptr);
+		counter += write(1, "0x", 2);
+		ft_putptr((unsigned long long)ptr);
+		counter += get_ptrlen((unsigned long long)ptr);
 	}
-	return (input);
+	return (counter);
 }
 //
 //	************ VERSION OSX ************
